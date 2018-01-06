@@ -12,8 +12,8 @@ function findMaxSubstring($string, $N) {
   );
 
   while (($position + $N) < count($string) && $max_substring['length'] < (count($string) / 2)) {
-    if (in_array($string[($position + count($substring))], $substring)) {
-      array_push($substring, $string[($position + count($substring))]);
+    if (in_array($string[$position + count($substring)], $substring)) {
+      array_push($substring, $string[$position + count($substring)]);
     } else {
       if (count($substring) > $max_substring['length']) {
         $max_substring = array('substring' => $substring, 'length' => count($substring), 'position' => $position - 1);
@@ -35,5 +35,5 @@ function setUniqueChars($string, $position, $N) {
   return $chars;
 }
 
-// Print our results with example input within findMaxSubstring (our function call)
+// Display output using example input
 echo findMaxSubstring("dgfddssssdsfdffdfdfadfhheedsfdfcdfdxffdh", 2);
