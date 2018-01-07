@@ -1,5 +1,6 @@
 <?php
 
+// The following is my practice solution, which doesn't handle N > 2
 function findMaxSubstring($string, $N) {
   // Initial variables
   $position = 0;
@@ -37,3 +38,39 @@ function setUniqueChars($string, $position, $N) {
 
 // Display output using example input
 echo findMaxSubstring("dgfddssssdsfdffdfdfadfhheedsfdfcdfdxffdh", 2);
+
+// The best solution with O(n) implementation
+
+
+$MAX_CHARS = 26;
+
+// This function calculates number of unique characters
+// using an associative array count[]. Returns true if
+// no. of chars are less than required else Returns
+// false.
+function isValid($count, $N) {
+  $val = 0;
+  for ($i = 0; $i < $MAX_CHARS; $i++) {
+    if ($count[$i] > 0) {
+      $val++;
+    }
+  }
+  // Returns true if k is greater than or equal to val
+  return ($N >= $val)
+}
+
+// Finds the maximum substring with exactly N unique chars
+function findMaxSubstring($string, $N) {
+  $u = 0; // number of unique characters
+  $n = count($string);
+
+  // Associative array to store the count
+  $count = [0] * $MAX_CHARS;
+
+  // Traverse the string, fills the associative array
+  // count[] and count number of unique characters
+  for ($i = 0; $i < $n; $i++) {
+    if ($count)
+    // Pick up here...
+  }
+}
